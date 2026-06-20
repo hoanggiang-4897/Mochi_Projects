@@ -20,8 +20,19 @@
   background-attachment: fixed;
 }
     h1{
-       color: rgb(61, 68, 68); 
+       color: darkmagenta2 ; 
+       font-family: cursive;
     }
+    p{
+      color: darkmagenta2 ; 
+       font-family: cursive;
+    }
+
+.chesspiece {
+  width: 75px;
+  cursor: pointer;
+}
+
 #rook{
  position: absolute;
  left:380px;
@@ -42,6 +53,7 @@
  position: absolute;
  left:605px;
  top:25px;
+ 
 }
 #queen{
  position: absolute;
@@ -104,32 +116,55 @@
  position: absolute;
  left:910px;
  top:100px;
+ width: 70px;
+  
+  /* Smoothly transitions the transform effect over 0.3 seconds */
+  /* transition: transform 0.3s ease-in-out;  */
+}
+
+.move-up {
+  transform: translateY(70px); 
+}
+.bigsize {
+  width: 100px;
 }
 </style>
 <body>
 
 <h1>This is a chess board</h1>
-<img src="rook.png" id = "rook" alt="rook" width = 70>
-<img src="knight.png" id = "knight" alt="knight" width = 75>
-<img src="bishop.png" id = "bishop1" alt="bishop" width = 75> 
-<img src="kingaura.png" id = "kingaura" alt="kingaura" width = 75>
-<img src="queen.png" id = "queen"alt="queen" width = 67>
-<img src="bishop.png" id = "bishop" alt="bishop" width = 75>
-<img src="knight.png" id = "knight1" alt="knight" width = 75>
-<img src="rook.png" id = "rook1" alt="rook" width = 70>
-<img src="rook.png" id = "rook" alt="rook" width = 75>
-<img src="pawn1.png" id = "pawn1"  alt="pawn1" width = 70>
-<img src="pawn1.png" id = "pawn2" alt="pawn1" width = 70>
-<img src="pawn1.png" id = "pawn3" alt="pawn1" width = 70>
-<img src="pawn1.png" id = "pawn4" alt="pawn1" width = 70>
-<img src="pawn1.png" id = "pawn5" alt="pawn1" width = 70>
-<img src="pawn1.png" id = "pawn6" alt="pawn1" width = 70>
-<img src="pawn1.png" id = "pawn7" alt="pawn1" width = 70>
-<img src="pawn1.png" id = "pawn8" alt="pawn1" width = 70>
 
+<img src="rook.png" class = "chesspiece" id = "rook" alt="rook" >
+<img src="knight.png" class = "chesspiece" id = "knight" alt="knight">
+<img src="bishop.png" class = "chesspiece" id = "bishop1" alt="bishop"> 
+<img src="kingaura.png" class = "chesspiece" id = "kingaura" alt="kingaura" >
+<img src="queen.png" class = "chesspiece" id = "queen"alt="queen" >
+<img src="bishop.png"  class = "chesspiece" id = "bishop" alt="bishop" >
+<img src="knight.png"  class = "chesspiece" id = "knight1" alt="knight" >
+<img src="rook.png"  class = "chesspiece" id = "rook1" alt="rook" >
+<img src="rook.png"  class = "chesspiece" id = "rook" alt="rook" >
+<img src="pawn1.png" class = "chesspiece" id = "pawn1"  alt="pawn1" >
+<img src="pawn1.png"  class = "chesspiece" id = "pawn2" alt="pawn1" >
+<img src="pawn1.png"  class = "chesspiece" id = "pawn3" alt="pawn1" >
+<img src="pawn1.png"  class = "chesspiece" id = "pawn4" alt="pawn1" >
+<img src="pawn1.png"  class = "chesspiece" id = "pawn5" alt="pawn1" >
+<img src="pawn1.png"  class = "chesspiece" id = "pawn6" alt="pawn1" >
+<img src="pawn1.png"  class = "chesspiece" id = "pawn7" alt="pawn1" >
+<img src="pawn1.png"  class = "chesspiece" id = "pawn8" alt="pawn1"  onclick="moveUp()">
+<!-- <img src="pawn.png" id = "pawnb"  alt="pawn1" width = 70>
+<img src="pawn.png" id = "pawnbl"  alt="pawn1" width = 70>
+<img src="pawn.png" id = "pawnbla"  alt="pawn1" width = 70>
+<img src="pawn.png" id = "pawnblac"  alt="pawn1" width = 70>
+<img src="pawn.png" id = "pawnblack"  alt="pawn1" width = 70>
+<img src="pawn.png" id = "pawnblacky"  alt="pawn1" width = 70>
+<img src="pawn.png" id = "pawnblackyy"  alt="pawn1" width = 70>
+<img src="pawn.png" id = "pawnblackyys"  alt="pawn1" width = 70> -->
 
-
-<p>This is a paragraph.</p>
-
+<p>I like chess because im albert estien<br> and im too smart for AI  .</p>
+<script>
+  function moveUp() {
+  const pawn = document.getElementById('pawn7');
+  pawn.classList.toggle('bigsize');
+}
+</script>
 </body>
 </html>
