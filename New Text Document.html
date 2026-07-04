@@ -53,7 +53,7 @@
  position: absolute;
  left:605px;
  top:25px;
- 
+
 }
 #queen{
  position: absolute;
@@ -80,54 +80,85 @@
  position: absolute;
  left:385px;
  top:100px;
+ 
+  /* Smoothly transitions the transform effect over 0.3 seconds */
+  /* transition: transform 0.3s ease-in-out;  */
 }
 #pawn2{
  position: absolute;
  left:460px;
  top:100px;
+ 
+  /* Smoothly transitions the transform effect over 0.3 seconds */
+  /* transition: transform 0.3s ease-in-out;  */
 }
 #pawn3{
  position: absolute;
  left:530px;
  top:100px;
+ 
+  /* Smoothly transitions the transform effect over 0.3 seconds */
+  /* transition: transform 0.3s ease-in-out;  */
 }
 
 #pawn4{
  position: absolute;
  left:605px;
  top:100px;
+ 
+  /* Smoothly transitions the transform effect over 0.3 seconds */
+  /* transition: transform 0.3s ease-in-out;  */
 }
 #pawn5{
  position: absolute;
  left:684px;
  top:100px;
+
+  /* Smoothly transitions the transform effect over 0.3 seconds */
+  /* transition: transform 0.3s ease-in-out;  */
 }
 #pawn6{
  position: absolute;
  left:760px;
  top:100px;
+
+  /* Smoothly transitions the transform effect over 0.3 seconds */
+  /* transition: transform 0.3s ease-in-out;  */
 }
 #pawn7{
  position: absolute;
  left:835px;
  top:100px;
+
+  /* Smoothly transitions the transform effect over 0.3 seconds */
+  /* transition: transform 0.3s ease-in-out;  */
 }
 #pawn8{
  position: absolute;
  left:910px;
  top:100px;
  width: 70px;
+ display: inline-block;
   
   /* Smoothly transitions the transform effect over 0.3 seconds */
   /* transition: transform 0.3s ease-in-out;  */
+}
+#aihoi1{
+  position:absolute;
+  left: 910px;
+  top:175px;
+  width:70px;
+  display: none;
+   transform: rotate(90deg); 
+   cursor: pointer;
 }
 
 .move-up {
   transform: translateY(70px); 
 }
-.bigsize {
-  width: 100px;
-}
+/* #aihoi1{
+  
+} */
 </style>
 <body>
 
@@ -142,14 +173,17 @@
 <img src="knight.png"  class = "chesspiece" id = "knight1" alt="knight" >
 <img src="rook.png"  class = "chesspiece" id = "rook1" alt="rook" >
 <img src="rook.png"  class = "chesspiece" id = "rook" alt="rook" >
-<img src="pawn1.png" class = "chesspiece" id = "pawn1"  alt="pawn1" >
-<img src="pawn1.png"  class = "chesspiece" id = "pawn2" alt="pawn1" >
-<img src="pawn1.png"  class = "chesspiece" id = "pawn3" alt="pawn1" >
-<img src="pawn1.png"  class = "chesspiece" id = "pawn4" alt="pawn1" >
-<img src="pawn1.png"  class = "chesspiece" id = "pawn5" alt="pawn1" >
-<img src="pawn1.png"  class = "chesspiece" id = "pawn6" alt="pawn1" >
-<img src="pawn1.png"  class = "chesspiece" id = "pawn7" alt="pawn1" >
-<img src="pawn1.png"  class = "chesspiece" id = "pawn8" alt="pawn1"  onclick="moveUp()">
+<img src="pawn1.png" class = "chesspiece" id = "pawn1"  alt="pawn1" onclick=" movepawn1()">
+<img src="pawn1.png"  class = "chesspiece" id = "pawn2" alt="pawn1" onclick=" movepawn2()">
+<img src="pawn1.png"  class = "chesspiece" id = "pawn3" alt="pawn1" onclick=" movepawn3()">
+<img src="pawn1.png"  class = "chesspiece" id = "pawn4" alt="pawn1" onclick=" movepawn4()">
+<img src="pawn1.png"  class = "chesspiece" id = "pawn5" alt="pawn1" onclick=" movepawn5()">
+<img src="pawn1.png"  class = "chesspiece" id = "pawn6" alt="pawn1" onclick=" movepawn6()">
+<img src="pawn1.png"  class = "chesspiece" id = "pawn7" alt="pawn1" onclick=" movepawn7()">
+<img src="pawn1.png"  class = "chesspiece" id = "pawn8" alt="pawn1"  onclick="movepawn8()">
+<img src="arrow.png" id = "aihoi1" alt="arrow" onclick="movefollowarrow()">
+<!-- // -->
+
 <!-- <img src="pawn.png" id = "pawnb"  alt="pawn1" width = 70>
 <img src="pawn.png" id = "pawnbl"  alt="pawn1" width = 70>
 <img src="pawn.png" id = "pawnbla"  alt="pawn1" width = 70>
@@ -159,11 +193,46 @@
 <img src="pawn.png" id = "pawnblackyy"  alt="pawn1" width = 70>
 <img src="pawn.png" id = "pawnblackyys"  alt="pawn1" width = 70> -->
 
+
 <p>I like chess because im albert estien<br> and im too smart for AI  .</p>
 <script>
-  function moveUp() {
-  const pawn = document.getElementById('pawn7');
-  pawn.classList.toggle('bigsize');
+  function movepawn1() {
+  const pawn = document.getElementById('pawn1');
+  pawn.classList.toggle('move-up');
+}
+ function movepawn2() {
+  const pawn = document.getElementById('pawn2');
+  pawn.classList.toggle('move-up');
+}
+ function movepawn3() {
+  const pawn = document.getElementById('pawn3');
+  pawn.classList.toggle('move-up');
+}
+ function movepawn4() {
+  const pawn = document.getElementById('pawn4');
+  pawn.classList.toggle('move-up');
+}
+ function movepawn5() {
+  const pawn = document.getElementById('pawn5');
+  pawn.classList.toggle('move-up');
+}
+ function movepawn8() {
+  const pawn = document.getElementById('pawn8');
+  const secretButton = document.getElementById('aihoi1');
+
+  secretButton.style.display = 'block';
+//   // pawn.classList.toggle('move-up');
+//   pawn.addEventListener('click', function() {
+//   secretButton.style.display = 'block'; /* Changes display from 'none' to 'block' */
+// });
+
+}
+
+ function movefollowarrow() {
+  const pawn = document.getElementById('pawn8');
+  pawn.classList.toggle('move-up');
+  const secretButton = document.getElementById('aihoi1');
+  secretButton.style.display = 'none';
 }
 </script>
 </body>
