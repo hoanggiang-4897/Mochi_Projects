@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My favorite game</title>
+</head>
+<style>
+    /* Base state of the image */
+.movable-image {
+    position: absolute;
+    left:910px;
+ top:100px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Controls the speed of the movement */
+}
+
+/* Active state triggered by JavaScript */
+.movable-image.moved-up {
+  /* CHANGE THIS VALUE to adjust how much the image moves up */
+  transform: translateY(70px); 
+}
+
+#aihoi1{
+  position:absolute;
+  left: 910px;
+  top:175px;
+  width:70px;
+  display: none;
+   transform: rotate(90deg); 
+   cursor: pointer;
+}
+#aihoi1.move-up {
+    transform: translateY(70px)
+}
+
+</style>
+<body>
+
+<img src="pawn1.png" class="movable-image" alt="Click to move up">
+<img src="arrow.png" id = "aihoi1" alt="arrow">
+
+
+</body>
+<script>
+    // Select the image element
+const image = document.querySelector('.movable-image');
+
+// Toggle the class on every click
+image.addEventListener('click', () => {
+//   image.classList.toggle('moved-up');
+  const secretButton = document.getElementById('aihoi1');
+  
+  secretButton.style.display = 'block';
+
+});
+
+const secretButton = document.getElementById('aihoi1');
+secretButton.addEventListener('click', () => {
+//   image.classList.toggle('moved-up');
+  image.classList.toggle('moved-up')
+   secretButton.style.display = 'none';
+
+});
+
+</script>
+</html>
